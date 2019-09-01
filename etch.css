@@ -1,0 +1,19 @@
+.square {
+    border: solid black 1px; 
+    color: gray; 
+    background: white; 
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.grid_container{
+    width: 300px;
+    height: 300px;
+    border: solid black 1px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.colorChanged {
+    color: blue;
+}

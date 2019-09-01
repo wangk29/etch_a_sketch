@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch a Sketch Project</title>
+        <link rel='stylesheet' type='text/css' href='etch.css'>
+    </head>
+    <body>
+        <h1>Etch-a-Sketch Project</h1>
+
+        <button id='clear'>Clear Board</button>
+
+        <div class='grid_container'>
+            
+        </div>
+
+        
+        
+        
+        
+        
+    </body>
+        <script>
+        
+            const grid = document.querySelector('.grid_container')
+            let total_size = 300
+            const clear = document.querySelector('#clear')
+
+            let clearGrid = function(){
+                while(grid.firstChild){
+                    grid.removeChild(grid.firstChild)
+                }
+            }
+            
+        
+            let makeGrid = function (){
+                let gridSize = window.prompt("Enter the number of squares per side of grid", 1)
+                for(let i=0; i<gridSize * gridSize; i++){
+                    const square = document.createElement('div')
+                    square.classList.add('square')
+                    square.style.width = `${(300/gridSize-1).toFixed(1)-1}px`
+                    square.style.height = `${(300/gridSize-1).toFixed(1)-1}px`
+                    grid.appendChild(square)
+                    
+                }
+                let squares = Array.from(document.querySelectorAll('div'))
+                squares.forEach((square) => {
+                    square.addEventListener('mouseover', function(e){
+                        e.target.style.backgroundColor = 'blue';
+                        console.log('count')
+                    })
+                })
+            
+            }
+
+            clear.addEventListener('click', function(e){
+                clearGrid();
+                makeGrid();
+            })
+        
+        
+
+        </script>
+</html>
